@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+echo "Clear the install cache"
+echo
+rm -rf ~/.bun/install/cache && \
+rm -f package-lock.json && \
+rm -f bun.lockb && \
+rm -rf node_modules/
+
+echo "Install"
+echo
+\time -f "Total time: %E\nCPU: %P" bun install
