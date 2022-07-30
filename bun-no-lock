@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+echo "Ensure caching"
+echo
+bun install
+
+echo
+echo "Clear the lock and node_modules"
+echo
+du -sh ~/.bun/install/cache && \
+rm -f bun.lockb \
+rm -f package-lock.json \
+rm -rf node_modules/
+
+echo
+echo "Install"
+echo
+\time -f "Total time: %E\nCPU: %P" bun install

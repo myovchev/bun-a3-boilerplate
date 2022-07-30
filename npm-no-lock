@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+
+echo "Ensure caching"
+echo
+npm install
+
+echo
+echo "Clear the lock and node_modules"
+echo
+rm -f package-lock.json && \
+rm -rf node_modules/ && \
+npm cache verify --cache ./data/npm-cache
+
+echo
+echo "Install"
+echo
+\time -f "\nTotal time: %E\nCPU: %P" npm install --cache ./data/npm-cache 

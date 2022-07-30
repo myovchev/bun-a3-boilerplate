@@ -1,0 +1,17 @@
+{
+  "include": [
+    "ts/**/*"
+  ],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "lib": [
+      "ESNext"
+    ],
+    "module": "esnext",
+    "target": "esnext",
+    "types": [
+      "bun-types",
+      "node"
+    ]
+  }
+}

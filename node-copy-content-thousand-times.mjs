@@ -1,4 +1,4 @@
-import { writeFile, copyFile, unlink } from 'fs/promises';
+import { writeFile, readFile, unlink } from 'fs/promises';
 
 const filePath = './data/for-copy.txt';
 const copyPath = './data/copy-test.txt';
@@ -6,15 +6,14 @@ const copyPath = './data/copy-test.txt';
 try {
   await unlink(filePath);
   await unlink(copyPath);
-} catch(e) {}
+} catch (e) { }
 
 await writeFile(filePath, `The content`, 'utf8');
 
 console.time('1000 times')
 for (const i of [...Array(1000).keys()]) {
-  await copyFile(filePath, copyPath);
-  // Delete it because Bun doesn't like to override plus 
-  // it becomes more intense file operation
-  await unlink(copyPath);
+  const content = await readFile(filePath, 'utf-8');
+  await writeFile(copyPath, content);
 }
 console.timeEnd('1000 times');
+

@@ -1,0 +1,16 @@
+{
+  "exclude": [
+    "ts/**/*"
+  ],
+  "compilerOptions": {
+    "lib": [
+      "ESNext"
+    ],
+    "module": "esnext",
+    "target": "esnext",
+    "types": [
+      "bun-types",
+      "node"
+    ]
+  }
+}

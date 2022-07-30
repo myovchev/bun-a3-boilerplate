@@ -41,9 +41,11 @@
   "license": "MIT",
   "dependencies": {
     "apostrophe": "^3.0.0",
+    "bun-types": "^0.1.4",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
+    "@types/node": "^18.6.1",
     "eslint": "^7.16.0",
     "eslint-config-apostrophe": "^3.4.0",
     "eslint-plugin-node": "^11.1.0",
